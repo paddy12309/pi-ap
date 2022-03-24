@@ -105,6 +105,9 @@ cat <<EOF> /etc/ufw/user.rules
 ### tuple ### allow tcp 443 0.0.0.0/0 any 192.168.0.0/28 in
 -A ufw-user-input -p tcp --dport 443 -s 192.168.0.0/28 -j ACCEPT
 
+### tuple ### allow udp 1883 0.0.0.0/0 any 192.168.0.0/28 in
+-A ufw-user-input -p udp --dport 5353 -s 192.168.0.0/28 -j ACCEPT
+
 ### tuple ### allow udp 5353 0.0.0.0/0 any 192.168.0.0/28 in
 -A ufw-user-input -p udp --dport 5353 -s 192.168.0.0/28 -j ACCEPT
 
