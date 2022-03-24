@@ -84,6 +84,7 @@ cat <<EOF> /etc/ufw/user.rules
 
 ### tuple ### allow tcp 1883 0.0.0.0/0 any 0.0.0.0/0 out
 -A ufw-user-output -p tcp --dport 1883 -j ACCEPT
+-A ufw-user-input -p tcp --dport 1883 -j ACCEPT
 
 ### tuple ### allow tcp 443 0.0.0.0/0 any 0.0.0.0/0 out
 -A ufw-user-output -p tcp --dport 443 -j ACCEPT
