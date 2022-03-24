@@ -20,8 +20,8 @@ source "${BASH_SOURCE%/*}/functions.sh"
 echo "Hostname CURRENT: $(hostname)"
 
 # Change Hostname using variables in variables.sh:
-hostnamectl set-hostname $OURHOSTNAME.$OURDOMAIN
-systemctl restart systemd-hostnamed
+#hostnamectl set-hostname $OURHOSTNAME.$OURDOMAIN
+#systemctl restart systemd-hostnamed
 
 
 echo
