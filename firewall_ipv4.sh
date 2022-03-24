@@ -52,6 +52,7 @@ cat <<EOF> /etc/ufw/user.rules
 #
 
 *filter
+:ufw-user-allow - [0:0]
 :ufw-user-input - [0:0]
 :ufw-user-output - [0:0]
 :ufw-user-forward - [0:0]
@@ -106,7 +107,7 @@ cat <<EOF> /etc/ufw/user.rules
 -A ufw-user-input -p tcp --dport 443 -s 192.168.0.0/28 -j ACCEPT
 
 ### tuple ### allow tcp 1883 0.0.0.0/0 any 192.168.5.0/28 in
-#-A ufw-user-input -p tcp --dport 1883 -s 192.168.5.0/28 -j ACCEPT
+#-A ufw-user-input -p tcp --dport 1883 -s 192.168.0.0/28 -j ACCEPT
 #-A ufw-user-output -p tcp --dport 1883 -s 192.168.5.0/28 -j ACCEPT
 -A ufw-user-allow -p tcp --dport 1883 -s 192.168.0.0/28 -j ACCEPT
 
