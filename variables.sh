@@ -28,9 +28,11 @@ IPV4IPWLAN0='192.168.0.1/28'
 #IPV6IPWLAN0="$(ip -6 addr|awk '{print $2}'|grep -P '^(?!fe80)[[:alnum:]]{4}:.*/64'|cut -d '/' -f1)"
 
 # NOTE: Both Hyphens and underscores are valid characters for use in an SSID
-SSIDNAME='RPI-AP1'
+VAR2=$(</home/pi/CollatorStartup/CID.txt)
+VAR1="Collator-"
+SSIDNAME="$VAR1$VAR2"
 # Password must be min 8 characters and must NOT include single quotes- these are used as delimiters to encase the password so other special characters do not expand in bash
-APWPA2PASSWD='cH4nG3M3'
+APWPA2PASSWD='liteip00'
 
 # Default port systemd-resolved start on '5353' collides with dnsmasq (which does DHCP for WiFi clients) which also uses '5353' as its default port.
 # I chose 5454 but that number is arbitrary: if you have another process which listens on port 5454 feel free to change it to a different value
